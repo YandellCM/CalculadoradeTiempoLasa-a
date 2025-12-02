@@ -1,10 +1,10 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #f0f2f5, #d4d9e3);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -20,52 +20,17 @@ body {
 
 h1 {
     color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-size: 24px;
 }
 
-label {
-    font-weight: bold;
-    color: #555;
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-input[type="number"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: 0.3s;
-}
-
-input[type="number"]:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 8px rgba(0,123,255,0.2);
-}
-
-button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #0056b3;
-}
-
 p {
-    margin-top: 10px;
-    font-weight: bold;
+    background: #f7f7f7;
+    padding: 12px;
+    border-radius: 8px;
     color: #444;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #ddd;
 }

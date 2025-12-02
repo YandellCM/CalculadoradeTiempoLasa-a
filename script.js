@@ -2,35 +2,28 @@
 
 const TIEMPO_HORNO = 40;
 
-document.addEventListener("DOMContentLoaded", function () {
+let capas = prompt("¿Cuántas capas tendrá la lasaña?", "");
+let minutosEnHorno = prompt("¿Cuántos minutos lleva en el horno?", "");
 
-    const btn = document.getElementById("btnCalcular");
+if (capas === "" || minutosEnHorno === "" || capas < 0 || minutosEnHorno < 0) {
+    alert("Por favor ingresa valores válidos.");
+} else {
 
-    btn.addEventListener("click", function () {
+    capas = Number(capas);
+    minutosEnHorno = Number(minutosEnHorno);
 
-        let capas = document.getElementById("capas").value;
-        let minutos = document.getElementById("horno").value;
+    let tiempoRestante = TIEMPO_HORNO - minutosEnHorno;
 
-        if (capas === "" || minutos === "" || capas < 0 || minutos < 0) {
-            alert("Por favor ingresa valores válidos.");
-            return;
-        }
+    let tiempoPreparacion = capas * 2;
 
-        capas = Number(capas);
-        minutos = Number(minutos);
+    let tiempoTotal = minutosEnHorno + tiempoPreparacion;
 
-        let tiempoRestante = TIEMPO_HORNO - minutos;
-        let tiempoPreparacion = capas * 2;
-        let tiempoTotal = minutos + tiempoPreparacion;
+    document.getElementById("restante").textContent =
+        "Tiempo restante en el horno: " + tiempoRestante + " minutos";
 
-        document.getElementById("restante").textContent =
-            "Tiempo restante en el horno: " + tiempoRestante + " minutos";
+    document.getElementById("preparacion").textContent =
+        "Tiempo total de preparación: " + tiempoPreparacion + " minutos";
 
-        document.getElementById("preparacion").textContent =
-            "Tiempo total de preparación: " + tiempoPreparacion + " minutos";
-
-        document.getElementById("total").textContent =
-            "Tiempo total de trabajo: " + tiempoTotal + " minutos";
-    });
-
-});
+    document.getElementById("total").textContent =
+        "Tiempo total de trabajo: " + tiempoTotal + " minutos";
+}
